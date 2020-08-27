@@ -122,7 +122,7 @@ function generateHistoryAndLengthEquals9() {
   ];
 }
 
-function generateHistoryAndLengthEquals4() {
+function generateHistoryWithoutChinaAndLengthEquals4() {
   return  [
     {
       zone: 'east-indies',
@@ -131,7 +131,7 @@ function generateHistoryAndLengthEquals4() {
       zone: 'west-indies',
       profit: 15,
     },{
-      zone: 'china',
+      zone: 'c',
       profit: -2,
     },
     {
@@ -140,6 +140,99 @@ function generateHistoryAndLengthEquals4() {
     },
   ];
 }
+
+function generateHistoryWithoutChinaAndLengthEquals6() {
+  return  [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'c',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },{
+      zone: 'east-indies1',
+      profit: 5,
+    },{
+      zone: 'west-indies1',
+      profit: 15,
+    },
+  ];
+}
+
+function generateHistoryWithoutChinaAndLengthEquals8() {
+  return  [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'c',
+      profit: -2,
+    }, {
+      zone: 'west-africa',
+      profit: 7,
+    },
+    {
+      zone: 'east-indies1',
+      profit: 5,
+    },{
+      zone: 'west-indies1',
+      profit: 15,
+    },{
+      zone: 'chinese',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa1',
+      profit: 7,
+    },
+  ];
+}
+
+function generateHistoryWithoutChinaAndLengthEquals9() {
+  return  [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'c',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },{
+      zone: 'east-indies1',
+      profit: 5,
+    },{
+      zone: 'west-indies1',
+      profit: 15,
+    },{
+      zone: 'chinese',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa1',
+      profit: 7,
+    }, {
+      zone: 'west-africa2',
+      profit: 7,
+    },
+  ];
+}
+
 
 
 rankTest('west-indies 10 and history include china and length 4', t => {
@@ -276,3 +369,58 @@ rankTest('test voyageProfitFactor east-indies 13 and history include china and l
   const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals9());
   t.is(4, expectedResult);
 });
+
+rankTest('test voyageProfitFactor east-indies without China 15 and history include china and length 4', t => {
+  const voyage = {
+    zone: 'china',
+    length: 15,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryWithoutChinaAndLengthEquals4());
+  t.is(2, expectedResult);
+});
+
+rankTest('test voyageProfitFactor east-indies without China 14 and history include china and length 4', t => {
+  const voyage = {
+    zone: 'china',
+    length: 14,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryWithoutChinaAndLengthEquals4());
+  t.is(3, expectedResult);
+});
+
+rankTest('test voyageProfitFactor east-indies without China 13 and history include china and length 4', t => {
+  const voyage = {
+    zone: 'china',
+    length: 13,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryWithoutChinaAndLengthEquals4());
+  t.is(3, expectedResult);
+});
+
+rankTest('test voyageProfitFactor east-indies without China 15 and history include china and length 6', t => {
+  const voyage = {
+    zone: 'china',
+    length: 15,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryWithoutChinaAndLengthEquals6());
+  t.is(2, expectedResult);
+});
+
+rankTest('test voyageProfitFactor east-indies without China 14 and history include china and length 8', t => {
+  const voyage = {
+    zone: 'china',
+    length: 14,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryWithoutChinaAndLengthEquals8());
+  t.is(3, expectedResult);
+});
+
+rankTest('test voyageProfitFactor east-indies without China 13 and history include china and length 9', t => {
+  const voyage = {
+    zone: 'china',
+    length: 13,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryWithoutChinaAndLengthEquals9());
+  t.is(4, expectedResult);
+});
+
