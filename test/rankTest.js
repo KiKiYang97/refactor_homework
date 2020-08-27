@@ -40,3 +40,12 @@ rankTest('west-indies 10 and history include china and length 4', t => {
   t.is('B',expectedResult);
 });
 
+rankTest('west-indies 14 and history include china and length 4', t => {
+  const voyage = {
+    zone: 'west-indies',
+    length: 14,
+  };
+  const expectedResult = rating(voyage, generateHistoryAndLengthEquals4());
+  t.is('B',expectedResult);
+});
+
