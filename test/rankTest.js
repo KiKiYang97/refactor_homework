@@ -523,17 +523,37 @@ rankTest('test voyageProfitFactor China 10 and history include china and length 
   t.is(6, expectedResult);
 });
 
-rankTest('rankTest(\'test voyageProfitFactor China 10 and history include china and length 10\', t => {\n' +
-    '  const voyage = {\n' +
-    '    zone: \'china\',\n' +
-    '    length: 10,\n' +
-    '  };\n' +
-    '  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals10());\n' +
-    '  t.is(4, expectedResult);\n' +
-    '});', t => {
+rankTest('test voyageProfitFactor China 10 and history include china and length 11', t => {
   const voyage = {
     zone: 'china',
     length: 10,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals11());
+  t.is(7, expectedResult);
+});
+
+rankTest('test voyageProfitFactor China 12 and history include china and length 9', t => {
+  const voyage = {
+    zone: 'china',
+    length: 12,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals9());
+  t.is(6, expectedResult);
+});
+
+rankTest('test voyageProfitFactor China 12 and history include china and length 10', t => {
+  const voyage = {
+    zone: 'china',
+    length: 12,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals10());
+  t.is(6, expectedResult);
+});
+
+rankTest('test voyageProfitFactor China 12 and history include china and length 11', t => {
+  const voyage = {
+    zone: 'china',
+    length: 12,
   };
   const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals11());
   t.is(7, expectedResult);
