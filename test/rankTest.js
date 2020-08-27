@@ -684,3 +684,48 @@ rankTest('test voyageRisk west-indies 10', t => {
   const expectedResult = voyageRisk(voyage);
   t.is(5, expectedResult);
 });
+
+rankTest('test voyageRisk china 2', t => {
+  const voyage = {
+    zone: 'china',
+    length: 2,
+  };
+  const expectedResult = voyageRisk(voyage);
+  t.is(5, expectedResult);
+});
+
+rankTest('test voyageRisk china 4', t => {
+  const voyage = {
+    zone: 'china',
+    length: 4,
+  };
+  const expectedResult = voyageRisk(voyage);
+  t.is(5, expectedResult);
+});
+
+rankTest('test voyageRisk china 6', t => {
+  const voyage = {
+    zone: 'china',
+    length: 6,
+  };
+  const expectedResult = voyageRisk(voyage);
+  t.is(7, expectedResult);
+});
+
+rankTest('test voyageRisk china 8', t => {
+  const voyage = {
+    zone: 'china',
+    length: 8,
+  };
+  const expectedResult = voyageRisk(voyage);
+  t.is(7, expectedResult);
+});
+
+rankTest('test voyageRisk china 10', t => {
+  const voyage = {
+    zone: 'china',
+    length: 10,
+  };
+  const expectedResult = voyageRisk(voyage);
+  t.is(9, expectedResult);
+});
