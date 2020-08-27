@@ -1,4 +1,4 @@
-import {rating, voyageProfitFactor, voyageRisk} from "../src/rank";
+import {captainHistoryRisk, rating, voyageProfitFactor, voyageRisk} from "../src/rank";
 
 const rankTest = require('ava');
 
@@ -26,6 +26,28 @@ function generateHistoryAndLengthEquals4() {
     {
       zone: 'west-africa',
       profit: 7,
+    },
+  ];
+}
+
+function generateHistoryAndLengthEquals5() {
+  return  [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },{
+      zone: 'east-indies1',
+      profit: 5,
     },
   ];
 }
@@ -218,6 +240,28 @@ function generateHistoryWithoutChinaAndLengthEquals4() {
     {
       zone: 'west-africa',
       profit: 7,
+    },
+  ];
+}
+
+function generateHistoryWithoutChinaAndLengthEquals5() {
+  return  [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'c',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },{
+      zone: 'east-indies1',
+      profit: 5,
     },
   ];
 }
@@ -728,4 +772,58 @@ rankTest('test voyageRisk china 10', t => {
   };
   const expectedResult = voyageRisk(voyage);
   t.is(9, expectedResult);
+});
+
+rankTest('test captainHistoryRisk china 4 and history without China and history length is 4', t => {
+  const voyage = {
+    zone: 'china',
+    length: 4,
+  };
+  const expectedResult = captainHistoryRisk(voyage,generateHistoryWithoutChinaAndLengthEquals4());
+  t.is(6, expectedResult);
+});
+
+rankTest('test captainHistoryRisk china 4 and history without China and history length is 5', t => {
+  const voyage = {
+    zone: 'china',
+    length: 4,
+  };
+  const expectedResult = captainHistoryRisk(voyage,generateHistoryWithoutChinaAndLengthEquals5());
+  t.is(2, expectedResult);
+});
+
+rankTest('test captainHistoryRisk china 4 and history without China and history length is 6', t => {
+  const voyage = {
+    zone: 'china',
+    length: 4,
+  };
+  const expectedResult = captainHistoryRisk(voyage,generateHistoryWithoutChinaAndLengthEquals6());
+  t.is(2, expectedResult);
+});
+
+rankTest('test captainHistoryRisk china 4 and history has China and history length is 4', t => {
+  const voyage = {
+    zone: 'china',
+    length: 4,
+  };
+  const expectedResult = captainHistoryRisk(voyage,generateHistoryAndLengthEquals4());
+  t.is(4, expectedResult);
+});
+
+rankTest('test captainHistoryRisk china 4 and history has China and history length is 5', t => {
+  const voyage = {
+    zone: 'china',
+    length: 4,
+  };
+  const expectedResult = captainHistoryRisk(voyage,generateHistoryAndLengthEquals5());
+  t.is(0, expectedResult);
+});
+
+rankTest('test captainHistoryRisk china 4 and history has China and history length is 6', t => {
+  const voyage = {
+    zone: 'china',
+    length: 4,
+  };
+  const expectedResult = captainHistoryRisk(voyage,generateHistoryAndLengthEquals6());
+  t.is(0, expectedResult);
 });
