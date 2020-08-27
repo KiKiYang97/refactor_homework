@@ -370,7 +370,7 @@ rankTest('test voyageProfitFactor east-indies 13 and history include china and l
   t.is(4, expectedResult);
 });
 
-rankTest('test voyageProfitFactor east-indies without China 15 and history include china and length 4', t => {
+rankTest('test voyageProfitFactor China without China 15 and history include china and length 4', t => {
   const voyage = {
     zone: 'china',
     length: 15,
@@ -379,7 +379,7 @@ rankTest('test voyageProfitFactor east-indies without China 15 and history inclu
   t.is(2, expectedResult);
 });
 
-rankTest('test voyageProfitFactor east-indies without China 14 and history include china and length 4', t => {
+rankTest('test voyageProfitFactor China without China 14 and history include china and length 4', t => {
   const voyage = {
     zone: 'china',
     length: 14,
@@ -388,7 +388,7 @@ rankTest('test voyageProfitFactor east-indies without China 14 and history inclu
   t.is(3, expectedResult);
 });
 
-rankTest('test voyageProfitFactor east-indies without China 13 and history include china and length 4', t => {
+rankTest('test voyageProfitFactor China without China 13 and history include china and length 4', t => {
   const voyage = {
     zone: 'china',
     length: 13,
@@ -397,7 +397,7 @@ rankTest('test voyageProfitFactor east-indies without China 13 and history inclu
   t.is(3, expectedResult);
 });
 
-rankTest('test voyageProfitFactor east-indies without China 15 and history include china and length 6', t => {
+rankTest('test voyageProfitFactor China without China 15 and history include china and length 6', t => {
   const voyage = {
     zone: 'china',
     length: 15,
@@ -406,7 +406,7 @@ rankTest('test voyageProfitFactor east-indies without China 15 and history inclu
   t.is(2, expectedResult);
 });
 
-rankTest('test voyageProfitFactor east-indies without China 14 and history include china and length 8', t => {
+rankTest('test voyageProfitFactor China without China 14 and history include china and length 8', t => {
   const voyage = {
     zone: 'china',
     length: 14,
@@ -415,7 +415,7 @@ rankTest('test voyageProfitFactor east-indies without China 14 and history inclu
   t.is(3, expectedResult);
 });
 
-rankTest('test voyageProfitFactor east-indies without China 13 and history include china and length 9', t => {
+rankTest('test voyageProfitFactor China without China 13 and history include china and length 9', t => {
   const voyage = {
     zone: 'china',
     length: 13,
