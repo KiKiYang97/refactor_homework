@@ -11,12 +11,8 @@ rankTest('bar', async t => {
   t.is(await bar, 'bar');
 });
 
-rankTest('west-indies 10 and history include china and length 4', t => {
-  const voyage = {
-    zone: 'west-indies',
-    length: 10,
-  };
-  const history = [
+function generateHistoryAndLengthEquals4() {
+  return  [
     {
       zone: 'east-indies',
       profit: 5,
@@ -32,6 +28,15 @@ rankTest('west-indies 10 and history include china and length 4', t => {
       profit: 7,
     },
   ];
-  const expectedResult = rating(voyage, history);
+}
+
+
+rankTest('west-indies 10 and history include china and length 4', t => {
+  const voyage = {
+    zone: 'west-indies',
+    length: 10,
+  };
+  const expectedResult = rating(voyage, generateHistoryAndLengthEquals4());
   t.is('B',expectedResult);
 });
+
