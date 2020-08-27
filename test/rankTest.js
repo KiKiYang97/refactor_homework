@@ -612,3 +612,30 @@ rankTest('test voyageProfitFactor China 18 and history include china and length 
   const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals11());
   t.is(8, expectedResult);
 });
+
+rankTest('test voyageProfitFactor China 19 and history include china and length 9', t => {
+  const voyage = {
+    zone: 'china',
+    length: 19,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals9());
+  t.is(6, expectedResult);
+});
+
+rankTest('test voyageProfitFactor China 19 and history include china and length 10', t => {
+  const voyage = {
+    zone: 'china',
+    length: 19,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals10());
+  t.is(6, expectedResult);
+});
+
+rankTest('test voyageProfitFactor China 19 and history include china and length 11', t => {
+  const voyage = {
+    zone: 'china',
+    length: 19,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals11());
+  t.is(7, expectedResult);
+});
