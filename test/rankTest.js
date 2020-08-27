@@ -222,3 +222,57 @@ rankTest('test voyageProfitFactor west-indies 10 and history include china and l
   const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals6());
   t.is(2, expectedResult);
 });
+
+rankTest('test voyageProfitFactor east-indies 15 and history include china and length 4', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 15,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals4());
+  t.is(2, expectedResult);
+});
+
+rankTest('test voyageProfitFactor east-indies 14 and history include china and length 4', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 14,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals4());
+  t.is(3, expectedResult);
+});
+
+rankTest('test voyageProfitFactor east-indies 13 and history include china and length 4', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 13,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals4());
+  t.is(3, expectedResult);
+});
+
+rankTest('test voyageProfitFactor east-indies 15 and history include china and length 6', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 15,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals6());
+  t.is(2, expectedResult);
+});
+
+rankTest('test voyageProfitFactor east-indies 14 and history include china and length 8', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 14,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals8());
+  t.is(3, expectedResult);
+});
+
+rankTest('test voyageProfitFactor east-indies 13 and history include china and length 9', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 13,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals9());
+  t.is(4, expectedResult);
+});
