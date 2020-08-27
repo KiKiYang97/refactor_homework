@@ -122,6 +122,87 @@ function generateHistoryAndLengthEquals9() {
   ];
 }
 
+function generateHistoryAndLengthEquals10() {
+  return  [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },{
+      zone: 'east-indies1',
+      profit: 5,
+    },{
+      zone: 'west-indies1',
+      profit: 15,
+    },{
+      zone: 'chinese',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa1',
+      profit: 7,
+    }, {
+      zone: 'west-africa2',
+      profit: 7,
+    },
+     {
+      zone: 'west-africa3',
+      profit: 7,
+    }
+  ];
+}
+
+function generateHistoryAndLengthEquals11() {
+  return  [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },{
+      zone: 'east-indies1',
+      profit: 5,
+    },{
+      zone: 'west-indies1',
+      profit: 15,
+    },{
+      zone: 'chinese',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa1',
+      profit: 7,
+    }, {
+      zone: 'west-africa2',
+      profit: 7,
+    },
+    {
+      zone: 'west-africa3',
+      profit: 7,
+    }, {
+      zone: 'west-africa3',
+      profit: 7,
+    },
+  ];
+}
+
 function generateHistoryWithoutChinaAndLengthEquals4() {
   return  [
     {
@@ -424,3 +505,36 @@ rankTest('test voyageProfitFactor China without China 13 and history include chi
   t.is(4, expectedResult);
 });
 
+rankTest('test voyageProfitFactor China 10 and history include china and length 9', t => {
+  const voyage = {
+    zone: 'china',
+    length: 10,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals9());
+  t.is(6, expectedResult);
+});
+
+rankTest('test voyageProfitFactor China 10 and history include china and length 10', t => {
+  const voyage = {
+    zone: 'china',
+    length: 10,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals10());
+  t.is(6, expectedResult);
+});
+
+rankTest('rankTest(\'test voyageProfitFactor China 10 and history include china and length 10\', t => {\n' +
+    '  const voyage = {\n' +
+    '    zone: \'china\',\n' +
+    '    length: 10,\n' +
+    '  };\n' +
+    '  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals10());\n' +
+    '  t.is(4, expectedResult);\n' +
+    '});', t => {
+  const voyage = {
+    zone: 'china',
+    length: 10,
+  };
+  const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals11());
+  t.is(7, expectedResult);
+});
