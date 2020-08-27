@@ -1,4 +1,4 @@
-import {rating, voyageProfitFactor} from "../src/rank";
+import {rating, voyageProfitFactor, voyageRisk} from "../src/rank";
 
 const rankTest = require('ava');
 
@@ -638,4 +638,49 @@ rankTest('test voyageProfitFactor China 19 and history include china and length 
   };
   const expectedResult = voyageProfitFactor(voyage, generateHistoryAndLengthEquals11());
   t.is(7, expectedResult);
+});
+
+rankTest('test voyageRisk west-indies 2', t => {
+  const voyage = {
+    zone: 'west-indies',
+    length: 2,
+  };
+  const expectedResult = voyageRisk(voyage);
+  t.is(1, expectedResult);
+});
+
+rankTest('test voyageRisk west-indies 4', t => {
+  const voyage = {
+    zone: 'west-indies',
+    length: 4,
+  };
+  const expectedResult = voyageRisk(voyage);
+  t.is(1, expectedResult);
+});
+
+rankTest('test voyageRisk west-indies 6', t => {
+  const voyage = {
+    zone: 'west-indies',
+    length: 6,
+  };
+  const expectedResult = voyageRisk(voyage);
+  t.is(3, expectedResult);
+});
+
+rankTest('test voyageRisk west-indies 8', t => {
+  const voyage = {
+    zone: 'west-indies',
+    length: 8,
+  };
+  const expectedResult = voyageRisk(voyage);
+  t.is(3, expectedResult);
+});
+
+rankTest('test voyageRisk west-indies 10', t => {
+  const voyage = {
+    zone: 'west-indies',
+    length: 10,
+  };
+  const expectedResult = voyageRisk(voyage);
+  t.is(5, expectedResult);
 });
