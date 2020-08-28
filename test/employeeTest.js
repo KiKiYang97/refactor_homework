@@ -17,3 +17,9 @@ rankTest('test validateType not throw Exception', t => {
     } catch (e) {
     }
 });
+
+rankTest('test toString', t => {
+        const employee = new Employee('Kiki','engineer');
+        const expectedResult = employee.toString();
+        t.is('Kiki (engineer)',expectedResult);
+});
