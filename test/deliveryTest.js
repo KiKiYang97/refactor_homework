@@ -41,3 +41,42 @@ rankTest('test deliveryDate isRush is true', t => {
     const expectedResult = deliveryDate(anOrder,true);
     t.is(4,expectedResult);
 });
+
+rankTest('test deliveryDate isRush is not true', t => {
+    const  anOrder = {
+        deliveryState : 'MA',
+        placedOn : {
+            plusDays(time) {
+                return time;
+            }
+        }
+    }
+    const expectedResult = deliveryDate(anOrder,false);
+    t.is(4,expectedResult);
+});
+
+rankTest('test deliveryDate isRush is not true', t => {
+    const  anOrder = {
+        deliveryState : 'ME',
+        placedOn : {
+            plusDays(time) {
+                return time;
+            }
+        }
+    }
+    const expectedResult = deliveryDate(anOrder,false);
+    t.is(5,expectedResult);
+});
+
+rankTest('test deliveryDate isRush is not true', t => {
+    const  anOrder = {
+        deliveryState : 'A',
+        placedOn : {
+            plusDays(time) {
+                return time;
+            }
+        }
+    }
+    const expectedResult = deliveryDate(anOrder,false);
+    t.is(6,expectedResult);
+});
