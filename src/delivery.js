@@ -1,6 +1,6 @@
 function deliveryDate (anOrder, isRush) {
   if (isRush) {
-    let deliveryTime;
+    let deliveryTime = 3;
     if ([
       'MA',
       'CT',
@@ -13,13 +13,10 @@ function deliveryDate (anOrder, isRush) {
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 2;
     }
-    else {
-      deliveryTime = 3;
-    }
     return anOrder.placedOn.plusDays(1 + deliveryTime);
   }
   else {
-    let deliveryTime;
+    let deliveryTime = 4;
     if ([
       'MA',
       'CT',
@@ -32,9 +29,6 @@ function deliveryDate (anOrder, isRush) {
       'NH',
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 3;
-    }
-    else {
-      deliveryTime = 4;
     }
     return anOrder.placedOn.plusDays(2 + deliveryTime);
   }
