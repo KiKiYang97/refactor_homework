@@ -1,3 +1,15 @@
+function calculate(invoice, outstanding) {
+  for (const o of invoice.borderSpacing) {
+    outstanding += o.amount;
+  }
+  return outstanding;
+}
+
+function recordDueDate(invoice) {
+  const today = new Date();
+  invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
+}
+
 function printOwing (invoice) {
   let outstanding = 0;
   console.log('***********************');
@@ -5,13 +17,10 @@ function printOwing (invoice) {
   console.log('***********************');
 
   // calculate outstanding
-  for (const o of invoice.borderSpacing) {
-    outstanding += o.amount;
-  }
+  outstanding = calculate(invoice, outstanding);
 
   // record due date
-  const today = new Date();
-  invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
+  recordDueDate(invoice);
 
   // print details
   console.log(`name: ${invoice.customer}`);
