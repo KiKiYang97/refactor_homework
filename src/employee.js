@@ -1,7 +1,10 @@
+const SALESMAN = 'salesman';
+const MANAGER = 'manager';
+const ENGINEER = 'engineer';
 const allType = [
-  'engineer',
-  'manager',
-  'salesman',
+  ENGINEER,
+  MANAGER,
+  SALESMAN,
 ];
 
 class Employee {
@@ -23,4 +26,7 @@ class Employee {
 }
 module.exports = {
   Employee,
+  ENGINEER,
+  SALESMAN,
+  MANAGER,
 }
