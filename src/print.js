@@ -22,13 +22,10 @@ function printDetails(invoice, outstanding) {
 function printOwing (invoice) {
   let outstanding = 0;
 
-  // calculate outstanding
   outstanding = calculate(invoice, outstanding);
 
-  // record due date
   recordDueDate(invoice);
 
-  // print details
   return  printDetails(invoice, outstanding);
 }
 module.exports = {
