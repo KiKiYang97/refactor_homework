@@ -9,3 +9,11 @@ rankTest('test validateType throw Exception', t => {
         t.is('Employee cannot be of type student',e.message)
     }
 });
+
+rankTest('test validateType not throw Exception', t => {
+    try {
+        const employee = new Employee('Kiki','engineer');
+        t.pass();
+    } catch (e) {
+    }
+});
