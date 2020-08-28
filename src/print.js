@@ -10,11 +10,17 @@ function recordDueDate(invoice) {
   invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
 }
 
-function printOwing (invoice) {
-  let outstanding = 0;
+function printDetails(invoice, outstanding) {
   console.log('***********************');
   console.log('**** Customer Owes ****');
   console.log('***********************');
+  console.log(`name: ${invoice.customer}`);
+  console.log(`amount: ${outstanding}`);
+  console.log(`amount: ${invoice.dueDate.toLocaleDateString()}`);
+}
+
+function printOwing (invoice) {
+  let outstanding = 0;
 
   // calculate outstanding
   outstanding = calculate(invoice, outstanding);
@@ -23,9 +29,7 @@ function printOwing (invoice) {
   recordDueDate(invoice);
 
   // print details
-  console.log(`name: ${invoice.customer}`);
-  console.log(`amount: ${outstanding}`);
-  console.log(`amount: ${invoice.dueDate.toLocaleDateString()}`);
+  printDetails(invoice, outstanding);
 }
 module.exports = {
   printOwing,
